@@ -13,6 +13,8 @@ windows:
 
 Running instructions:
 
-1) flask run
+1) Navigate to project directory
 
-2) Navigate to the provided link from the console
+2) flask run
+
+3) Navigate to the provided link from the console
