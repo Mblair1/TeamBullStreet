@@ -6,13 +6,13 @@ posts = [
         'author': 'Matthew Blair',
         'title': 'Feed Post 1',
         'content': 'First post content',
-        'date_posted': 'Auguest 11, 2021'
+        'date_posted': 'August 11, 2021'
     },
     {
         'author': 'Kenndog',
         'title': 'Beethoven',
         'content': 'Homies with the guap',
-        'date_posted': 'Auguest 11, 2021'
+        'date_posted': 'August 11, 2021'
     }
 ]
 
