@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Chart</title>
+<meta charset="utf-8">	
+<!--Chart.js library-->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.0"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<style>
+    /* colors to use: #5680E9, #84CEEB, #5AB9EA, #C1C8E4, #8860D0 */
+#wrapper {
+    margin: auto;
+    width: 960px;
+    font-family: 'Roboto', sans-serif;
+    border: 3px solid black;
+}
+#today{
+    float: left;
+    /*width: 400px !important;
+    height: 400px !important; */
+}
+#week {
+    float: right;
+}
+.chartContainer1{
+    float: left; 
+    width: 450px;
+    height: 450px;
+}
+.chartContainer2{
+    float: right;
+    width: 450px;
+    height: 450px;
+}
+.chartContainer3{
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+</style>
+</head>
+
+    <body>
+        <div id = "wrapper">
+            <div class = "chartContainer1">
+                <canvas id  = "today"></canvas>
+                
+            </div>
+
+            <div class = "chartContainer2">
+                <canvas id = "week"></canvas>
+            </div>
+
+
+            <div class = "chartContainer3">
+                <canvas id = "sentiment"></canvas>
+            </div>
+            
+            <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+            <br><br><br><br><br><br><br><br>
+            
+            <canvas id = "compare"></canvas>
+
+            
+            <!--
+            <canvas id = "dislikes"></canvas>
+            <canvas id = "comments"></canvas>
+            -->
+
+        </div>
+
+    <script>
+        const today = document.getElementById("today").getContext("2d");
+        let todayChart = new Chart(today, {
+            type: "doughnut",
+            data: {
+                labels: ["Likes", "Dislikes", "Comments"],
+                datasets: [{
+                    data: [193, 60, 34],
+                    backgroundColor: ["#5680E9", "#5AB9EA", "#8860D0"],
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Today's Activity",
+                        font: {size: 30}
+                    },
+                    legend: {
+                        labels: {
+                            font: {size: 15}
+                        }
+                    }
+                }
+            }
+        });
+
+        const week = document.getElementById("week").getContext("2d");
+        let weekChart = new Chart(week, {
+            type: "doughnut",
+            data: {
+                labels: ["Likes", "Dislikes", "Comments"],
+                datasets: [{
+                    data: [560, 126, 300],
+                    backgroundColor: ["#5680E9", "#5AB9EA", "#8860D0"],
+                }]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "This Week's Activity",
+                        font: {size: 30}
+                    },
+                    legend: {
+                        labels: {
+                            font: {size: 15}
+                        }
+                    }
+                }
+            }
+        });
+        
+        //##C1C8E4, #8860D0
+        
+        const compare = document.getElementById("compare").getContext("2d");
+        let doubleBar = new Chart(compare, {
+            type: "bar", 
+            data: {
+                labels: ["Likes", "Dislikes", "Comments"],
+                datasets: [
+                {
+                    label: "This Week",
+                    backgroundColor: "#5AB9EA",
+                    data: [765, 300, 657],
+                },
+                {
+                    label: "Last Week",
+                    backgroundColor: "#8860D0",
+                    data: [500, 600, 453],
+                }
+            ]
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "This Week vs. Last Week",
+                        font: {size: 30}
+                    }
+                },
+                legend: {
+                    labels: {
+                        font: {size: 15}
+                    }
+                }
+            }
+        });
+        
+        const sentiment = document.getElementById("sentiment").getContext("2d");
+        let sentimentChart = new Chart(sentiment, {
+            type: "doughnut",
+            data: {
+                labels: ["Compliments", "Complaints"],
+                datasets: [{
+                    data: [19, 5],
+                    backgroundColor: ["#5680E9", "#8860D0"],
+                }]    
+            },
+            options: {
+                plugins: {
+                    title: {
+                        display: true,
+                        text: "Today's Sentiments",
+                        font: {size: 30}
+                    },
+                    legend: {
+                        labels: {
+                            font: {size: 15}
+                        }
+                    }
+                }
+            }
+        }); 
+        
+    </script>
+    </body>
+
+</html>
