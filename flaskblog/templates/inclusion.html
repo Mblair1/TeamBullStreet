@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Inclusion Resources</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='inlcu.css') }}">
+  </head>
+  <body>
+    <header role="banner">
+      <h1>Inclusion Resources</h1>
+      <nav role="navigation">
+        <ul>
+          <li><a href="{{ url_for('workingwomen')}}">Working Women</a></li>
+          <li><a href="gallery.html">LGBTQ</a></li>
+          <li><a href="howto.html">BIPOC</a></li>
+           <li><a href="{{ url_for('anno')}}">Incident Form</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="main-content" tabindex="-1" role="main">
+    </main>
+ <footer role="contentinfo">
+      <p><small>All content &copy; AutoMobex</small></p>
+    </footer>
+  </body>
+</html>
