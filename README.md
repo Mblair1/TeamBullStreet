@@ -18,3 +18,5 @@ Running instructions:
 2) flask run
 
 3) Navigate to the provided link from the console
+
+Note, if it does not run after you enter flask run, then just pip install PROJECTNAME that the interpreter tells you is missing.
